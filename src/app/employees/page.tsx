@@ -5,10 +5,10 @@ export const metadata = {
   }
 
 const Employees = async () => {
-    const apiUrl = process.env.DB_HOST;
-    const response = await fetch(apiUrl, {
+    console.log(process.env.DB_HOST);
+    const response = await fetch(`${process.env.DB_HOST}`, {
         next: {
-            revalidate: 60
+            revalidate: 30
         }
     });
     const data = await response.json();

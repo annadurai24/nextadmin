@@ -13,6 +13,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }): JSX.Element {
+  console.log(process.env.BASE_PATH);
   return (
     <html lang="en">
 
