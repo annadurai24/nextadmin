@@ -3,9 +3,9 @@ const oracledb = require('oracledb');
 async function connectToDatabase() {
     try {
         await oracledb.createPool({
-            user: 'SSPAY',
-            password: 'Thondi623407',
-            connectString: '(description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.ap-mumbai-1.oraclecloud.com))(connect_data=(service_name=gc604e270480810_sundarisilkdb_high.adb.oraclecloud.com))(security=(ssl_server_dn_match=yes)))',
+            user: process.env.DB_USER,
+            password: process.env.DB_PASS,
+            connectString: process.env.DB_CONNECTION_STRING,
             poolMax: 20,
             poolMin: 2,
             poolIncrement: 2,
