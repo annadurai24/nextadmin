@@ -5,7 +5,8 @@ export const metadata = {
   }
 
 const Employees = async () => {
-    const response = await fetch('http://localhost:3000/api', {
+    const apiUrl = process.env.DB_HOST;
+    const response = await fetch(apiUrl, {
         next: {
             revalidate: 60
         }
